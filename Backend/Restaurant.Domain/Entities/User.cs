@@ -21,7 +21,7 @@ public class User
         Guid id,
         string name,
         string email,
-        string passwordHash,
+        string password,
         UserRole role)
     {
         if(Guid.Empty == id )
@@ -42,11 +42,11 @@ public class User
             throw new ArgumentException("El email no es válido");
         Email = email;
 
-        if(string.IsNullOrWhiteSpace(passwordHash))
+        if(string.IsNullOrWhiteSpace(password))
             throw new ArgumentException("La contraseña no puede estar vacia");
-        if(passwordHash.Length < 8)
+        if(password.Length < 8)
             throw new ArgumentException("La Contraseña debe tener minimo 8 caracteres");
-        Password = passwordHash;
+        Password = password;
 
         if(!Enum.IsDefined(role))
             throw new ArgumentException("El rol no puede estar vacio");

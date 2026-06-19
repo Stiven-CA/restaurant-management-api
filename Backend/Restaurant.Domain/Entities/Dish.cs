@@ -17,7 +17,7 @@ public class Dish{
         string name,
         string description,
         decimal price,
-        Boolean soldout,
+        Boolean soldOut,
         DishCategory category
     )
     {
@@ -40,7 +40,7 @@ public class Dish{
             throw new ArgumentException("El Precio no puede ser negativo o ser cero");
         Price = price;
 
-        SoldOut = soldout;
+        SoldOut = soldOut;
 
         if(!Enum.IsDefined(category))
             throw new ArgumentException("La categoria no puede estar vacia");
