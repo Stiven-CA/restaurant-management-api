@@ -3,12 +3,12 @@ namespace Restaurant.Domain.Repositories;
 
 public interface IUserRepository
 {
-    User Add(User user);
-    User Update(User user);
+    Task<User> Add(User user);
+    Task<User> Update(User user);
 
-    User GetById(Guid id);
-    User Delete(Guid id);
-    User GetByEmail(string email);
+    Task<User> GetById(Guid id);
+    Task<User> Delete(Guid id);
+    Task<User> GetByEmail(string email);
 
-    List<User> GetAll();
+    Task<List<User>> GetAll();
 }
