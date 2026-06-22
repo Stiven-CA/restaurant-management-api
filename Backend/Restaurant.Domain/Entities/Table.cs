@@ -32,9 +32,15 @@ public class Table
         if(!Enum.IsDefined(status))
             throw new ArgumentException("El estado no puede estar vacio");
         Status = status;
+    
 
     }
-
+    public void ChangeStatus(TableStatus newStatus)
+    {
+        if(!Enum.IsDefined(newStatus))
+            throw new ArgumentException("Estado inválido");
+        Status = newStatus;
+    }
 
 
 
