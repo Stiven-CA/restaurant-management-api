@@ -11,5 +11,6 @@ public interface ITableRepository
 
     Task<Table> GetById(Guid id);
     Task<List<Table>> GetCapacity(int capacity);
+    Task<List<Table>> GetAvailable(int capacity);
     Task<List<Table>> GetAll();
 }
