@@ -22,7 +22,7 @@ public class ReservationTable{
         var tables = await _tableRepository.GetAvailable(request.NPeople);
         if(!tables.Any())
             throw new ArgumentException("No hay mesas disponibles");
-        var table = tables.FirstOrDefault();
+        var table = tables.First();
 
         // Paso 2: Cambiar estado de la mesa y actualizar
         table.ChangeStatus(TableStatus.Reserved);
