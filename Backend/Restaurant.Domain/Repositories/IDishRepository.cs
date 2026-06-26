@@ -12,4 +12,5 @@ public interface IDishRepository
     Task<Dish> GetById(Guid id);
     Task<List<Dish>> GetCategory(DishCategory category);
     Task<List<Dish>> GetAll();
+    Task<List<Dish>> GetByIds(List<Guid> ids);
 }

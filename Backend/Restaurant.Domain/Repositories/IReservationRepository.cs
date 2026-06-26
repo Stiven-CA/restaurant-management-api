@@ -10,6 +10,6 @@ public interface IReservationRepository
 
     Task<Reservation?> GetById(Guid id);
     Task<List<Reservation>> GetAll();
-    Task<List<Reservation>> GetReservations(DateOnly date);
+    Task<List<Reservation>> GetReservations(DateTime date);
     
 }

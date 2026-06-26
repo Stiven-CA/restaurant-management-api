@@ -12,4 +12,5 @@ public interface IOrderDetailRepository
     Task<List<OrderDetail>> GetAll();
 
     Task<List<OrderDetail>> GetByOrder(Guid orderId);
+    Task<IEnumerable<OrderDetail>> GetByDate(DateTime date);
 }
