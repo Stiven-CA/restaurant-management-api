@@ -44,5 +44,12 @@ public class Order
             throw new ArgumentException("El Id no puede estar vacio");
         CustomerId = customerId;
     }
+    public void ChangeStatus(OrderStatus newStatus)
+    {
+        if(!Enum.IsDefined(newStatus))
+            throw new ArgumentException("Estado inválido");
+        Status = newStatus;
+    }
 
+    
 }
