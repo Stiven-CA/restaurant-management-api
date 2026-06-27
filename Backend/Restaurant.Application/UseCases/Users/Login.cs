@@ -22,8 +22,7 @@ public class Login{
         if(user == null)    
             throw new ArgumentException("El usuario no existe");
 
-        var hashedPassword = _passwordHasher.Hash(Password);
-        if(user.Password != hashedPassword) 
+        if(!_passwordHasher.Verify(Password, user.Password))
             throw new ArgumentException("La contraseña es incorrecta");
 
         var token = _jwtTokenGenerator.TokenGenerator(user);

@@ -10,5 +10,5 @@ public interface IOrderRepository
 
     Task<Order> GetById(Guid id);
     Task<List<Order>> GetAll();
-    Task<List<Order>> GetByDate(DateOnly date);
+    Task<List<Order>> GetByDate(DateTime date);
 }

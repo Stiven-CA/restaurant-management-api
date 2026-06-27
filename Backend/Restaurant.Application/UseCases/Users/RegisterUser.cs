@@ -8,12 +8,12 @@ namespace Restaurant.Application.UseCases.Users;
 public class RegisterUser{
 
     private  readonly IUserRepository _userRepository;
-    private readonly IPasswordHasher _passwodHasher;
+    private readonly IPasswordHasher _passwordHasher;
 
     public  RegisterUser(IUserRepository userRepository, 
-                         IPasswordHasher passwordHasger){
+                         IPasswordHasher passwordHasher){
         _userRepository = userRepository;
-        _passwodHasher = passwordHasger;
+        _passwordHasher = passwordHasher;
     }
 
     public async Task<UserResponseDto> ExecuteAsync(CreateUserRequestDto request)
@@ -21,7 +21,7 @@ public class RegisterUser{
         var existing = await _userRepository.GetByEmail(request.Email);
         if (existing != null)
             throw new ArgumentException("El email ya está registrado");
-        var hashedPassword = _passwodHasher.Hash(request.Password);
+        var hashedPassword = _passwordHasher.Hash(request.Password);
         var user = new User(
             Guid.NewGuid(),
             request.Name,

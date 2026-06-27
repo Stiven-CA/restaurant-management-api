@@ -5,12 +5,12 @@ using Restaurant.Domain.Entities;
 
 namespace Restaurant.Application.UseCases.Orders;
 
-public class OpenOder{
+public class OpenOrder{
     private readonly IOrderRepository _orderRepository;
     private readonly ITableRepository _tableRepository;
     private readonly IUserRepository _userRepository;
 
-    public OpenOder(IOrderRepository orderRepository,
+    public OpenOrder(IOrderRepository orderRepository,
                     ITableRepository tableRepository,
                     IUserRepository userRepository){
 
