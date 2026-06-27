@@ -5,14 +5,14 @@ using Restaurant.Application.DTOs.Order;
 
 namespace Restaurant.Application.UseCases.Orders;
 
-public class RecordPyament{
+public class RecordPayment{
 
     private readonly IOrderRepository _orderRepository;
     private readonly IOrderDetailRepository _orderDetailRepository;
     private readonly ITableRepository _tableRepository;
 
 
-    public RecordPyament(IOrderRepository orderRepository,
+    public RecordPayment(IOrderRepository orderRepository,
                          IOrderDetailRepository orderDetailRepository,
                          ITableRepository tableRepository){
     
