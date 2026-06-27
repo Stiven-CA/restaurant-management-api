@@ -48,6 +48,11 @@ public class Reservation{
             throw new ArgumentException("El ID no puede estar vacio");
         TableId = tableId;
     }
-
+    public void ChangeStatus(ReservationStatus newStatus)
+    {
+        if(!Enum.IsDefined(newStatus))
+            throw new ArgumentException("Estado inválido");
+        Status = newStatus;
+    }
     
 }

@@ -4,11 +4,11 @@ namespace Restaurant.Domain.Repositories;
 
 public interface IOrderRepository
 {
-    Order Add(Order order);
-    Order Update(Order order);
-    Order Delete(Guid id);
+    Task<Order> Add(Order order);
+    Task<Order> Update(Order order);
+    Task<Order> Delete(Guid id);
 
-    Order GetById(Guid id);
-    List<Order> GetAll();
-    List<Order> GetByDate(DateOnly date);
+    Task<Order> GetById(Guid id);
+    Task<List<Order>> GetAll();
+    Task<List<Order>> GetByDate(DateOnly date);
 }

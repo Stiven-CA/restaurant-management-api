@@ -4,12 +4,13 @@ namespace Restaurant.Domain.Repositories;
 
 public interface ITableRepository
 {
-    Table Add(Table table);
-    Table Delete(Guid id);
+    Task<Table> Add(Table table);
+    Task<Table> Delete(Guid id);
 
-    Table Update(Table table);
+    Task<Table> Update(Table table);
 
-    Table GetById(Guid id);
-    List<Table> GetCapacity(int capacity);
-    List<Table> GetAll();
+    Task<Table> GetById(Guid id);
+    Task<List<Table>> GetCapacity(int capacity);
+    Task<List<Table>> GetAvailable(int capacity);
+    Task<List<Table>> GetAll();
 }

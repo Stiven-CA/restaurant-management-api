@@ -1,4 +1,5 @@
-namespace Restaurant.Application.DTOs;
+namespace Restaurant.Application.DTOs.Dish;
+
 public class DishResponseDto
 {
     public required string Name{ get; set; }

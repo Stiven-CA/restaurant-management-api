@@ -4,12 +4,12 @@ namespace Restaurant.Domain.Repositories;
 
 public interface IReservationRepository
 {
-    Reservation Add(Reservation reservation);
-    Reservation Update(Reservation reservation);
-    Reservation Delete(Guid id);
+    Task<Reservation> Add(Reservation reservation);
+    Task<Reservation> Update(Reservation reservation);
+    Task<Reservation> Delete(Guid id);
 
-    Reservation? GetById(Guid id);
-    List<Reservation> GetAll();
-    List<Reservation> GetReservations(DateOnly date);
+    Task<Reservation?> GetById(Guid id);
+    Task<List<Reservation>> GetAll();
+    Task<List<Reservation>> GetReservations(DateOnly date);
     
 }

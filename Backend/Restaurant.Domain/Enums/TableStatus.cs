@@ -2,7 +2,7 @@ namespace Restaurant.Domain.Enums;
 
 public enum TableStatus
 {
-    free,
+    Free,
     Occupied,
-    reserved
+    Reserved
 }

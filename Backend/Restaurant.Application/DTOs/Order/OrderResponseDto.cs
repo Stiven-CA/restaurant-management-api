@@ -1,4 +1,4 @@
-namespace Restaurant.Application.DTOs;
+namespace Restaurant.Application.DTOs.Order;
 
 public class OrderResponseDto
 {
