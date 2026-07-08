@@ -24,7 +24,7 @@ public class ReservationTable{
             throw new ArgumentException("No hay mesas disponibles");
         var table = tables.First();
         
-        if( await _reservationRepository.GetByTableAndDateTime(table.Id, request.Date, request.Time) != null)
+        if( await _reservationRepository.GetByTableAndDateTime(table.Id, request.Date.ToDateTime(TimeOnly.MinValue), request.Time.ToTimeSpan()) != null)
             throw new ArgumentException("Ya hay Reservacion para esa fecha y hora");
 
         // Paso 2: Cambiar estado de la mesa y actualizar
